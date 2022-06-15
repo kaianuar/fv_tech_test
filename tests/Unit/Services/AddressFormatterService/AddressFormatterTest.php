@@ -128,4 +128,21 @@ class AddressFormatterTest extends TestCase
         $this->assertEquals('Longisland 92911 Proin Road', $addressFormatter->getLine2());
         $this->assertEquals('Lake Charles Maine', $addressFormatter->getLine3());
     }
+
+    public function test_address_smaller_than_max_size_is_not_formatted()
+    {
+        $input = [
+            'address1' => 'Address 1',
+            'address2' => 'Address 2',
+            'address3' => 'Address 3',
+        ];
+
+        $request = new Request($input);
+        $addressFormatter = AddressFormatter::makeFromRequest($request);
+        $addressFormatter->resolveAddress();
+
+        $this->assertEquals('Address 1', $addressFormatter->getLine1());
+        $this->assertEquals('Address 2', $addressFormatter->getLine2());
+        $this->assertEquals('Address 3', $addressFormatter->getLine3());
+    }
 }
