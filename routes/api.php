@@ -14,6 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::post('/v1/address/verify', [\App\Http\Controllers\API\V1\AddressFormatterController::class, 'formatAddress'])->name('verifyAddress');
