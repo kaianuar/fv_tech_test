@@ -13,8 +13,6 @@ class AddressFormatterController extends Controller
     {
         $addressFormatter = AddressFormatter::makeFromRequest($request);
 
-        $addressFormatter->resolveAddress();
-
         return response()->json(
             $addressFormatter
                 ->resolveAddress()
