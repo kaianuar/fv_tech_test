@@ -18,8 +18,6 @@ class AddressFormatter
 
     protected array $unAllocatedAddress;
 
-    protected array $linesWithError;
-
     /**
      * @param  \Illuminate\Http\Request  $request
      * @return static
@@ -202,24 +200,6 @@ class AddressFormatter
     protected function setUnAllocatedAddress(array $unAllocatedAddress): self
     {
         $this->unAllocatedAddress = $unAllocatedAddress;
-        return $this;
-    }
-
-    /**
-     * @return array
-     */
-    protected function getLinesWithError(): array
-    {
-        return $this->linesWithError;
-    }
-
-    /**
-     * @param  array  $linesWithError
-     * @return self
-     */
-    protected function setLinesWithError(array $linesWithError): self
-    {
-        $this->linesWithError = $linesWithError;
         return $this;
     }
 }
