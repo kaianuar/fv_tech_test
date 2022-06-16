@@ -22,6 +22,10 @@ In the Postman app, set the Body to `raw` and `JSON` from the dropdown and enter
 
 Clicking on send will then return the formatted address.
 
+## Unit testing
+
+The project includes several unit test that can be run via the `/vendor/bin/phpunit` from the project root.
+
 ## Disclaimer
 
 Due to the timeframe allocated for this task, the API endpoint doesn't cover every possible usage scenario. For example, it will not handle address that has a total length larger than 90 characters. 
